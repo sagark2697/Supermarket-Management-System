@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-billing',
   templateUrl: './billing.component.html',
@@ -8,14 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillingComponent implements OnInit {
   submitted = false;
-  currentDate: number = Date.now();
+  today: Date = new Date();
+  
 
+  constructor() { 
+  
+  }
 
-  constructor() { }
+  
+
+  
 
   onSubmit() {
     this.submitted = true;
   }
+
+  
 
   ngOnInit() {
   }

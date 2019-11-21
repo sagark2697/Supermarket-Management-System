@@ -9,15 +9,17 @@ import { Router } from '@angular/router';
 import { DataserviceService } from '../services/dataservice.service';
 import { Cashier } from '../cashier';
 import { HttpserviceService } from '../services/httpservice.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { Logindetails } from '../logindetails';
-
+import {ErrorStateMatcher} from '@angular/material/core';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-add-cashier',
   templateUrl: './add-cashier.component.html',
   styleUrls: ['./add-cashier.component.css']
 })
+
 export class AddCashierComponent implements OnInit {
  
   // form = new FormGroup({
@@ -67,15 +69,14 @@ export class AddCashierComponent implements OnInit {
         this.cashier = data;
         console.log(this.cashier);
       },
-      error => alert("error while saving")
+      // error => alert("error while saving")
       );
 
     }
 
-    else {
-      alert("please enter valid details")
-    }
-    
+    // else {
+    //   alert("please enter valid details")
+    // }   
 
   }
 
@@ -84,5 +85,7 @@ export class AddCashierComponent implements OnInit {
     this.dataservice.currentMessage.subscribe(message => this.message = message)
     console.log("updated details"+this.message)
   }
-
 }
+
+
+

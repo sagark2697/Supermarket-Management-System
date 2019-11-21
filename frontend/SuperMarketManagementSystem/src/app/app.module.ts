@@ -55,6 +55,7 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 import { DeleteCashierComponent } from './delete-cashier/delete-cashier.component';
 import { UpdateProductDetailsComponent } from './update-product-details/update-product-details.component';
 import { BillingComponent } from './billing/billing.component';
+import { ViewTransactionsComponent } from './view-transactions/view-transactions.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { BillingComponent } from './billing/billing.component';
     DeleteProductComponent,
     DeleteCashierComponent,
     UpdateProductDetailsComponent,
-    BillingComponent
+    BillingComponent,
+    ViewTransactionsComponent
    
   ],
   imports: [
@@ -162,6 +164,10 @@ import { BillingComponent } from './billing/billing.component';
 {
  path: 'billing',
  component: BillingComponent 
+},
+{
+  path: 'view-transactions',
+  component: ViewTransactionsComponent
 }
 
 

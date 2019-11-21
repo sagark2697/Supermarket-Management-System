@@ -18,8 +18,8 @@ body {
   
   form.example button {
     float: left;
-    width: 20%;
-    padding: 10px;
+    width: 15%;
+    padding: 15px;
     background: #2196F3;
     color: white;
     font-size: 17px;
@@ -61,11 +61,11 @@ input[type=text], input[type=password] {
 }
 
 .ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #42A948; /* green */
+    border-left: 15px solid #42A948; /* green */
   }
   
   .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
+    border-left: 15px solid #a94442; /* red */
   }
 
   .split {
@@ -172,7 +172,7 @@ button:hover {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* Style the horizontal ruler */

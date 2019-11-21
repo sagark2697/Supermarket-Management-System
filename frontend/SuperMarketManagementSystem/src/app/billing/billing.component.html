@@ -1,76 +1,38 @@
-<!-- <form (ngSubmit)="onSubmit()" #billingForm = "ngForm">
-                
-    <div class="split left">
-            <div class="container">
-                    <div [hidden] = "submitted">
-                        <h1>Billing Form/h1>
-                       
-                            <div class="form-group">
-                                    <mat-form-field>
-                                            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Enter Product ID">
-                                    </mat-form-field>
-                            </div>
-                               
-                    
-                          <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name">
-                          </div>
-                
-                          <div class="form-group">
-                                <label for="price">Price</label>
-                                <input type="text" class="form-control" id="price">
-                          </div>
-                
-                          <div class="form-group">
-                                    <label for="quantity">Quantity</label>
-                                    <input type="text" class="form-control" id="quantity" required [(ngModel)]="billing.quantity" name="quantity" #quantity ="ngModel">
-                                    <div [hidden] ="quantity.valid || quantity.pristine" class="alert alert-danger"> Quantity is Required </div> 
-                           </div>
-                
-                            <div class="form-group">
-                                    <label for="discount">Discount</label>
-                                    <input type="text" class="form-control" id="discount">
-                            </div>
-                    
-                          <button type="submit" class="btn btn-success" [disabled]= "!billingForm.form.valid">Add</button>
-                          <button type="button" class="btn btn-default" (click)="newBilling(); billingForm.reset()"> Reset</button>
-                
-                            
-                        
-                    </div>
-            </div>
 
-        </div>
-        </form>     -->
 
         <div class="split left">
-                <form #myform="ngForm" >
+            <div [hidden]="submitted">
+                <form (ngSubmit)="onSubmit()" #myform="ngForm" >
                         <div class="container">
-                          <h1>Bill Generation</h1>
-                          <hr>
-                          <mat-form-field>
-                                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Enter Product ID">
-                              </mat-form-field>
-                          <label for="Product_Name"><b>Product Name</b></label><br>
-                          <input type="text" placeholder="Product Name" name="Product_Name" required  [(ngModel)]= "product.name "> <br>
-
-                          <label for="Price"><b>Price</b></label><br>
-                          <input type="text" placeholder="Product Price" name="price" required [(ngModel)]= "product.price"><br>
-
-                          <label for="Quantity"><b>Quantity</b></label><br>
-                          <input type="text" placeholder="Product Quantity" name="quantity" required [(ngModel)]= "product.quantity" ><br>
-
-                          <label for="Discount"><b>Discount</b></label><br>
-                          <input type="text" placeholder="Product Discount" name="discount" required [(ngModel)]= "product.discount" ><br>
                          
-
-                          <div class="clearfix">
-                            <button type="button" [routerLink]="['../Cashier-home']" class="cancelbtn">Cancel</button>
-                            <button type="button" class="signupbtn" (click)="addproduct()" [disabled]="!myform.form.valid">Add </button>   
+                              <h1>Bill Generation</h1>
+                              <hr>
+                              <mat-form-field>
+                                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Enter Product ID">
+                                  </mat-form-field>
+                              <label for="Product_Name"><b>Product Name</b></label><br>
+                              <input type="text" placeholder="Product Name" name="Product_Name" required  [(ngModel)]= "product.name "> <br>
+    
+                              <label for="Price"><b>Price</b></label><br>
+                              <input type="text" placeholder="Product Price" name="price" required [(ngModel)]= "product.price"><br>
+    
+                              <label for="Quantity"><b>Quantity</b></label><br>
+                              <input type="text" placeholder="Product Quantity" name="quantity" required [(ngModel)]= "product.quantity" name="quantity" #quantity="ngModel">
+                              <!-- <div [hidden]="quantity.valid || quantity.pristine" class="alert alert-danger">Quantity is Required</div>--><br>
+    
+                              <label for="Discount"><b>Discount</b></label><br>
+                              <input type="text" placeholder="Product Discount" name="discount" required [(ngModel)]= "product.discount" ><br>
+                             
+    
+                              <div class="clearfix">
+                                <button type="button" [routerLink]="['../Cashier-home']" class="cancelbtn">Cancel</button>
+                                <button type="button" class="signupbtn" (click)="addproduct()" [disabled]="!myform.form.valid">Add </button>   
+                              </div>
                           </div>
-                        </div>
+                          
+                       
                       </form>
+                    </div>  
            </div>
    
 
@@ -79,8 +41,8 @@
           
           <div class="split right">
 
-                <p>The time is {{currentDate | date:'yyyy-MM-dd'}}</p>
-                
+                <div>{{ today | date : 'EEEE, MMMM d, h:mm' }}</div>
+
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     
                         <!-- Position Column -->
